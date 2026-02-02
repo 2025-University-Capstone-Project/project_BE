@@ -1,10 +1,10 @@
 aws:
   access:
     key:
-      id: "AKIA2CL5YXQMCFL7DYEQ"  # AWS Access Key ID
+      id: ${AWS_ACCESS_KEY_ID}  # AWS Access Key ID (환경변수 사용 권장)
   secret:
     access:
-      key: "eF/GSaqHHrsWCdJWqgGEepvATmDjRizo5PRJd0QN"  # AWS Secret Access Key
+      key: ${AWS_SECRET_ACCESS_KEY}  # AWS Secret Access Key (환경변수 사용 권장)
   s3:
     bucket:
       name: "baseball-web-project"  # S3 버킷 이름

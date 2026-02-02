@@ -53,6 +53,20 @@ graph LR
 
 ---
 
+## 🏗 CI/CD Pipeline
+
+서비스의 지속적 통합 및 배포를 위해 GitHub Actions를 활용한 자동화 파이프라인을 구축했습니다.
+
+### Deployment Workflow
+1.  **CI (Continuous Integration)**: 
+    - `main` 또는 `develop` 브랜치에 코드가 푸쉬되면 GitHub Actions가 트리거됩니다.
+    - **Gradle Build**: 코드를 빌드하고 테스트를 수행하여 무결성을 검증합니다.
+2.  **CD (Continuous Deployment)**:
+    - 빌드가 성공하면 `.jar` 파일을 생성합니다.
+    - **Deployment**: SCP 또는 외부 라이브러리를 통해 EC2 인스턴스로 빌드 파일을 전송하거나, Docker 이미지를 통한 무중단 배포 환경을 지원합니다. (프로젝트 설정에 따라 다름)
+
+---
+
 ## 📁 Project Architecture
 
 ```text

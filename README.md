@@ -14,8 +14,8 @@ Y.P.T 백엔드는 사용자 인증, 데이터 영속성 관리, 대용량 이�
 
 - **Lanuage & Framework**: Java 17, Spring Boot 3.3.x
 - **Security**: Spring Security, JWT (JSON Web Token)
-- **Database**: MySQL, Spring Data JPA
-- **Cloud Infrastructure**: **AWS (EC2, S3, IAM)**
+- **Database**: MySQL (AWS RDS), Spring Data JPA
+- **Cloud Infrastructure**: **AWS (EC2, S3, RDS, IAM)**
 - **OAuth**: Kakao Login API 연동
 - **API Docs**: SpringDoc OpenAPI (Swagger UI)
 - **Build Tool**: Gradle
@@ -47,14 +47,14 @@ graph LR
     User((User)) -->|HTTPS| EC2[AWS EC2 Instance]
     EC2 -->|Auth| Kakao[(Kakao OAuth)]
     EC2 -->|Storage| S3[AWS S3 Bucket]
-    EC2 -->|Data| MySQL[(MySQL Database)]
+    EC2 -->|Data| RDS[(AWS RDS - MySQL)]
     EC2 -->|IAM| Role[AWS IAM Role]
 ```
 
 - **Server**: AWS EC2 (Ubuntu 22.04 LTS)
+- **Database**: **AWS RDS (MySQL 8.x)** - 데이터 가용성 및 확장성 확보
 - **Deployment**: `Gradle`을 활용한 빌드 최적화 및 `.jar` 실행 환경 구축
 - **Storage**: AWS S3를 활용한 정적 리소스(이미지) 관리
-- **Database**: MySQL을 활용한 관계형 데이터 관리
 
 ---
 
